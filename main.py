@@ -163,11 +163,12 @@ class main(QWidget):
     def del_task(self):
         self.hide_tasks()
         target = self.sender()
-        for widgets in main.widgets:
+        for i, widgets in enumerate(main.widgets):
             if target in widgets:
                 for elem in widgets[1:]:
                     elem.setParent(None)
                 main.widgets.remove(widgets)
+                del main.info[i]
         if len(main.widgets) > 0:
             self.show_tasks()
         self.save_tasks()
