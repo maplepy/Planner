@@ -158,6 +158,7 @@ class main(QWidget):
             for widget in widgets[1:]:
                 widget.setParent(None)
         main.widgets.clear()
+        main.info.clear()
         self.save_tasks()
 
     def del_task(self):
